@@ -1,0 +1,232 @@
+:root {
+                  /* --accent: #0b6d44;
+                  --EarthMuted: #6b7280;
+                --bg: #0b0e14;
+                  --card: #ffffff;
+                  --border: #e6e9ee; */
+                  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+                }
+        
+                * {
+                  box-sizing: border-box
+                }
+        
+                body {
+                  margin: 0;
+                  background: #0b0e14;
+                  color: #0f172a;
+                  line-height: 1.4
+                }
+        
+                .Earthingcontainer {
+                  max-width: 900px;
+                  margin: 28px auto;
+                  padding: 24px
+                }
+        
+                .EarthingCard {
+                  background:#ffffff;
+                  border: 1px solid #e6e9ee;
+                  border-radius: 12px;
+                  padding: 28px;
+                  box-shadow: 0 6px 18px rgba(10, 20, 30, 0.04);
+                  /* color:red; */
+                }
+
+                .EarthingHeader {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  margin-bottom: 18px
+                }
+        
+                .Earthingbrand {
+                  display: flex;
+                  gap: 16px;
+                  align-items: center
+                }
+        
+                .Earthinglogo {
+                  width: 64px;
+                  height: 64px;
+                  background: linear-gradient(135deg, #0b6d44, #2ea97a);
+                  border-radius: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: white;
+                  font-weight: 700
+                }
+        
+                .Earthingcompany {
+                  font-size: 14px
+                }
+        
+                .Earthingcompany h1 {
+                  margin: 0;
+                  font-size: 18px
+                }
+
+                .Earthingcompany p {
+                  margin: 0;
+                  color: #6b7280;
+                  font-size: 13px
+                }
+        
+                .EarthingMeta {
+                  text-align: right
+                }
+        
+                .EarthingMeta .Earthinglabel {
+                  font-size: 12px;
+                  color: #6b7280;
+                }
+        
+                .EarthingMeta .Earthingvalue {
+                  font-weight: 600
+                }
+        
+                .Earthingsection {
+                  margin-top: 18px
+                }
+        
+                .Earthingcols {
+                  display: flex;
+                  gap: 18px
+                }
+        
+                .Earthingcol {
+                  flex: 1
+                }
+        
+                .Earthingcontainer table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin-top: 12px
+                }
+        
+                th,
+                td {
+                  padding: 12px 10px;
+                  border-bottom: 1px dashed #e6e9ee;
+                  text-align: left
+                }
+        
+                th {
+                  background: transparent;
+                  font-size: 13px;
+                  color: #6b7280;
+                  font-weight: 600
+                }
+        
+                td.Earthingright {
+                  text-align: right
+                }
+        
+                .Earthingmuted {        
+                  color: #6b7280;
+                  font-size: 13px
+                }
+        
+                .Earthingtotals {
+                  margin-top: 12px;
+                  max-width: 360px;
+                  margin-left: auto
+                }
+        
+                .Earthingtotals table {
+                  border: none
+                }
+        
+                .Earthingtotals th,
+                .Earthingtotals td {
+                  border: none;
+                  padding: 8px 6px
+                }
+        
+                .Earthinggrand {
+                  font-size: 18px;
+                  font-weight: 700;
+                  color: #083b1f
+                }
+        
+                .EarthingBodynotes {
+                  margin-top: 20px;
+                  background: #fbfdff;
+                  border: 1px solid #e6f3ea;
+                  padding: 12px;
+                  border-radius: 8px;
+                  color: #083b1f
+                }
+        
+                .EarthingBodysig {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-top: 26px
+                }
+        
+                .EarthingBodysig .EarthingBodyleft {
+                  color: #6b7280;
+                  font-size: 13px
+                }
+        
+                .EarthingBodysig .EarthingBodyright {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-end
+                }
+        
+                .EarthingBodyprint-btn {
+                  margin-top: 14px;
+                  padding: 10px 14px;
+                  border-radius: 8px;
+                  background: #083b1f;
+                  color: white;
+                  border: none;
+                  cursor: pointer
+                }
+        
+                @media (max-width:720px) {
+                EarthingBodyheader {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 12px
+                  }
+        
+                  .EarthingBodycols {
+                    flex-direction: column
+                  }
+        
+                  .EarthingBodymeta {
+                    text-align: left
+                  }
+        
+                  .EarthingBodytotals {
+                    max-width: 100%;
+                    margin-left: 0
+                  }
+                }
+        
+                /* Print friendly */
+                @media print {
+                .EarthingBody {
+                    background: white
+                  }
+        
+                  .EarthingBody .container {
+                    max-width: 100%;
+                    margin: 0;
+                    padding: 0
+                  }
+        
+                  .EarthingBody .print-btn {
+                    display: none
+                  }
+        
+                 .EarthingBody .card {
+                    border: none;
+                    box-shadow: none;
+                    padding: 0
+                  }
+                }
