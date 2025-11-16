@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.E RENEWABLE LTD | Breaker Calculator</title>
+    <style>
+        :root {
+            --bg-dark: #0a0f1a;
+            --bg-card: #111827;
+            --accent: #0072ce;
+            --text-light: #e0e6f0;
+            --yellow: #ffd43b;
+            --border: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 15px 15px;
+        }
+
+        header h1 {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        .main-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 22px;
+            width: 95%;
+            max-width: 1100px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+            padding: 25px 28px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 0 18px rgba(0, 114, 206, 0.2);
+        }
+
+        .input-card {
+            flex: 1 1 550px;
+        }
+
+        .results-card {
+            flex: 1 1 320px;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            color: var(--yellow);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            font-weight: 300;
+        }
+
+        input,
+        select {
+            width: 100%;
+            margin-top: 6px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #1f2937;
+            background: #0f172a;
+            color: var(--text-light);
+            outline: none;
+            font-weight: 300;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 6px rgba(0, 114, 206, 0.4);
+        }
+
+        .btn {
+            margin-top: 25px;
+            padding: 12px;
+            width: 100%;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-calc {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn-calc:hover {
+            background: var(--yellow);
+            color: #000;
+            box-shadow: 0 0 12px rgba(255, 212, 59, 0.4);
+        }
+
+        /* === RESULTS GRID === */
+        .results {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 18px;
+            margin-top: 12px;
+        }
+
+        .result-item {
+            background: #0f172a;
+            border: 1px dashed var(--border);
+            border-radius: 10px;
+            padding: 14px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 300;
+            transition: 0.3s;
+        }
+
+        .result-item:hover {
+            border-color: var(--accent);
+            background: rgba(17, 24, 39, 0.8);
+        }
+
+        .result-item span {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        .result-item .value {
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            padding: 15px;
+        }
+
+        footer a {
+            color: var(--yellow);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .main-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .results {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Breaker Calculation Tool</h1>
+        <p>Complete Electrical Design & Breaker Sizing by A.E RENEWABLE LTD</p>
+    </header>
+
+    <div class="main-wrapper">
+
+        <!-- Input Section -->
+        <div class="card input-card">
+            <h2>Input Parameters</h2>
+
+            <label>System Type</label>
+            <select id="systemType">
+                <option value="single">Single Phase (230V)</option>
+                <option value="three">Three Phase (400V)</option>
+            </select>
+
+            <label>Voltage (V)</label>
+            <input type="number" id="voltage" placeholder="e.g. 230" />
+
+            <label>Power (kW)</label>
+            <input type="number" id="power" placeholder="e.g. 10" />
+
+            <label>Power Factor (default 0.85)</label>
+            <input type="number" id="pf" step="0.01" placeholder="e.g. 0.85" />
+
+            <label>Cable Length (m)</label>
+            <input type="number" id="length" placeholder="Optional" />
+
+            <button class="btn btn-calc" id="calcBtn">Calculate Breaker</button>
+        </div>
+
+        <!-- Results Section -->
+        <div class="card results-card">
+            <h2>Results</h2>
+            <div class="results" id="resultBox">
+                <div class="result-item"><span>Load Current:</span><span class="value" id="current">--</span></div>
+                <div class="result-item"><span>Recommended Breaker:</span><span class="value" id="breaker">--</span>
+                </div>
+                <div class="result-item"><span>Suggested Cable Size:</span><span class="value" id="cable">--</span>
+                </div>
+                <div class="result-item"><span>Status:</span><span class="value" id="status">--</span></div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        Developed by <a href="#">A.E RENEWABLE LTD</a> | © 2025 All Rights Reserved
+    </footer>
+
+    <script>
+        document.getElementById("calcBtn").addEventListener("click", function () {
+            const type = document.getElementById("systemType").value;
+            const V = parseFloat(document.getElementById("voltage").value);
+            const P = parseFloat(document.getElementById("power").value);
+            const PF = parseFloat(document.getElementById("pf").value) || 0.85;
+
+            if (!V || !P) {
+                alert("Please enter valid Voltage and Power values!");
+                return;
+            }
+
+            // --- Load current calculation ---
+            let I = 0;
+            if (type === "single") {
+                I = (P * 1000) / (V * PF);
+            } else {
+                I = (P * 1000) / (Math.sqrt(3) * V * PF);
+            }
+
+            // --- Recommended breaker (nearest standard) ---
+            const standardBreakers = [6, 10, 16, 20, 25, 32, 40, 50, 63, 80, 100];
+            const breaker = standardBreakers.find(b => b >= I * 1.25) || "Custom Size";
+
+            // --- Cable size estimation ---
+            let cable = "4";
+            if (I <= 16) cable = "2.5";
+            else if (I <= 25) cable = "4";
+            else if (I <= 40) cable = "6";
+            else if (I <= 63) cable = "10";
+            else if (I <= 80) cable = "16";
+            else cable = "25+";
+
+            document.getElementById("current").textContent = I.toFixed(2) + " A";
+            document.getElementById("breaker").textContent = breaker + " A";
+            document.getElementById("cable").textContent = cable + " mm²";
+            document.getElementById("status").textContent = "✅ OK — Calculation Complete";
+        });
+    </script>
+
+</body>
+
+</html>

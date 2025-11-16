@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Certificate of Earthing Installation & Test</title>
+  <style>
+    :root{--accent:#0b6d44;--muted:#6b7280;--paper:#fff;--bg:#f3f6f7;font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);padding:28px;color:#072226}
+    .wrap{max-width:900px;margin:0 auto;background:var(--paper);padding:36px;border-radius:10px;border:1px solid #e6eef0}
+    header{display:flex;justify-content:space-between;align-items:center}
+    .brand{display:flex;gap:16px;align-items:center}
+    .logo{width:72px;height:72px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#2ea97a);display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    .certificate-title{text-align:center;margin:26px 0}
+    .certificate-title h2{margin:0;font-size:28px;color:var(--accent);letter-spacing:0.6px}
+    .certificate-title p{margin:6px 0 0;color:var(--muted)}
+
+    .details{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+    .field{background:#fbfdfc;padding:12px;border:1px solid #eaf6ee;border-radius:8px}
+    .field strong{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    .field span{font-weight:700}
+
+    .result{margin-top:18px;padding:16px;border-radius:8px;border:1px dashed #e0efe7;background:#ffffff}
+    .result .row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+    .result .label{color:var(--muted)}
+    .result .value{font-weight:800;font-size:18px}
+
+    .notes{margin-top:18px;color:#0b3b2b;background:#fbfffb;padding:12px;border-radius:8px;border:1px solid #e6f6e9}
+
+    .sign{display:flex;justify-content:space-between;align-items:center;margin-top:26px}
+    .sign .left{font-size:13px;color:var(--muted)}
+    .sign .right{display:flex;gap:18px;align-items:center}
+    .sig-block{width:220px;text-align:center}
+    .sig-line{height:46px;border-bottom:1px solid #cbd5d7;margin-bottom:6px}
+    .print{margin-top:18px;text-align:center}
+    .print button{padding:10px 14px;background:var(--accent);color:white;border-radius:8px;border:none;cursor:pointer}
+
+    @media print{body{background:white} .print{display:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">AE</div>
+        <div>
+          <h1>A.EnergySol (or Your Company)</h1>
+          <p class="lead">Electrical & Solar Solutions — RC: 123456 — info@aenergysol.com</p>
+        </div>
+      </div>
+
+      <div style="text-align:right">
+        <div style="font-size:13px;color:var(--muted)">Certificate No.</div>
+        <div style="font-weight:800;margin-top:6px" id="certNo">CER-2025-001</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:8px">Date Issued</div>
+        <div style="font-weight:700;margin-top:6px" id="certDate">October 27, 2025</div>
+      </div>
+    </header>
+
+    <div class="certificate-title">
+      <h2>Certificate of Earthing Installation & Test</h2>
+      <p>This is to certify that the earthing works described below have been completed and tested in accordance with accepted practice.</p>
+    </div>
+
+    <div class="details">
+      <div class="field">
+        <strong>Client / Site</strong>
+        <span id="client">Client Name / Company</span><br>
+        <small id="siteAddress" class="muted">Site Address: Street, City, State</small>
+      </div>
+
+      <div class="field">
+        <strong>Installer</strong>
+        <span id="installer">A.E. Installer</span><br>
+        <small class="muted">Contact: +234 80X XXX XXXX</small>
+      </div>
+
+      <div class="field">
+        <strong>Scope of Works</strong>
+        <span id="scope">Supply, installation and testing of earthing/grounding system inclusive of rods, conductors, backfill and bonding.</span>
+      </div>
+
+      <div class="field">
+        <strong>Test Method</strong>
+        <span id="method">3-point fall-of-potential (or clamp test where applicable)</span>
+      </div>
+    </div>
+
+    <div class="result">
+      <div class="row"><div class="label">Measured Earth Resistance</div><div class="value" id="resistance">3.2 Ω</div></div>
+      <div class="row"><div class="label">Target / Requirement</div><div class="value">&lt; 5 Ω</div></div>
+      <div class="row"><div class="label">Test Equipment</div><div class="value">Fluke 1625 / Megger / Earth Tester</div></div>
+    </div>
+
+    <div class="notes">
+      <strong>Remarks</strong>
+      <p id="remarks" style="margin:6px 0 0">Earthing system performance within acceptable limits. Additional rods or chemical backfill may be required in the future if soil conditions change. Certificate valid for works completed on date of issue.</p>
+    </div>
+
+    <div class="sign">
+      <div class="left">
+        <div style="font-weight:700">Verified by:</div>
+        <div style="margin-top:8px">Name: <strong id="verifier">Engr. A. Installer</strong></div>
+        <div>Position: <span class="muted">Site Engineer</span></div>
+        <div style="margin-top:8px" class="muted">Company Stamp / Seal</div>
+      </div>
+
+      <div class="right">
+        <div class="sig-block">
+          <div class="sig-line"></div>
+          <div style="font-size:13px">Signature</div>
+        </div>
+
+        <div class="sig-block">
+          <div class="sig-line"></div>
+          <div style="font-size:13px">Date</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="print">
+      <button onclick="window.print()">Print / Save as PDF</button>
+    </div>
+  </div>
+
+  <script>
+    // You can update fields via JS or directly edit the HTML placeholders
+    // Example:
+    // document.getElementById('client').textContent = 'Mr John Doe';
+  </script>
+</body>
+</html>

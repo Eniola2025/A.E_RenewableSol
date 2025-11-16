@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/TheProjectUi/toolBox.css">
+</head>
+<body>
+    <div class="quotation">
+        <div class="cardContainer">
+            <div class="hero">
+                <!-- Replace with real hero image URL if available -->
+                <img src="/TheProjectUi/rural_hero.jpg" alt="solar panels">
+    
+                <div class="logo-badge">
+                    <div style="display:flex;flex-direction:column;line-height:1">
+                        <svg class="logo-sun" viewBox="0 0 64 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs></defs>
+                            <rect x="0" y="8" width="48" height="24" rx="2" fill="#044381" opacity="0.06" />
+                            <path d="M6 22c0-1.1.9-2 2-2h30v8H8c-1.1 0-2-.9-2-2v-4z" fill="#fff" opacity="0.06" />
+                            <g transform="translate(4,4)">
+                                <circle cx="8" cy="6" r="6" fill="#fff" />
+                                <rect x="18" y="2" width="16" height="10" rx="1" fill="#FFD43B"
+                                    transform="rotate(-12 26 7)" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div style="flex:1">
+                        <div style="font-weight:800;font-size:18px">A.E<br>RENEWABLE LTD</div>
+                        <div class="tagline">POWERING YOUR FUTURE WITH SUN</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="mainContent">
+                <div class="leftSide">
+                    <h3>Executive Summary</h3>
+                    <p><strong>Dear Mr. <b id="clientName"></b></strong><br>
+                        Thank you for considering A.E RENEWABLE LTD for your solar energy needs. Based on the information
+                        provided, we have designed a customized solar power system to meet your energy requirements
+                        efficiently and sustainably.</p>
+    
+                    <div class="specsContainer">
+                        <h2>SYSTEM DESIGN &amp; SPECIFICATIONS</h2>
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th style="color: #044381;">Item</th>
+                                    <th style="color: #044381;">Description</th>
+                                    <th style="color: #044381;">Rated</th>
+                                    <th style="color: #044381;"> Inc.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Solar Panels</td>
+                                    <td><i id="ArrayBrand">Jinko</i> <br> <small id="arrayModel">Mono Crystalline... 162 kW
+                                            total..</small></td>
+                                    <td><small id="requiredArray">160KW</small></td>
+                                    <td><span id="pvSpecInc">✔</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Inverter</td>
+                                    <td><i id="systemBrand">Ivem</i> <br> <small id="systemModel">IVGM50KHP3G01..</small>
+                                    </td>
+                                    <td><small>UpTo</small> <br>
+                                        <small id="systemRequire">250KwP</small> <small id="maxP"></small>
+                                    </td>
+                                    <td><span id="systemSpecInc">✔</span></td>
+    
+                                </tr>
+                                <tr>
+                                    <td>Batteries</td>
+                                    <td><i id="batteryBrand">Module</i>
+                                        <small id="batteryModel">FLH48100UG1..</small>
+                                    </td>
+                                    <td><small id="RequiredBattery">300</small><small id="kwP">KwP</small></td>
+                                    <td><span id="batterySpecInc">✔</span></td>
+                                </tr>
+                                <tr>
+                                    <td id="mountingStructure">Mounting Structure</td>
+                                    <td><small id="MountinSBrandi">PV mounting structure &... </small><br><small
+                                            id="MountingBrandii"></small></td>
+                                    <td><small id="MountingSRequiredi">inverter mounting accessories</small><br><small
+                                            id="MountingSRequiredii"></small></td>
+                                    <td><span id="mountingStructureInc">✔</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Cables &amp; Accessories</td>
+                                    <td><small id="CableBrandi">Flex Cables (6mm², ... </small><br><small
+                                            id="CableBrandii">10mm²,16mm², ... 25mm², 75mm²) </small></td>
+                                    <td><small id="cableModeli"> </small><br><small id="cableModelii">Full gauge</small>
+                                    </td>
+                                    <td><span id="cablingInc">✔</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Protection Devices</td>
+                                    <td><i id="protectionModel">MCB</i><br><i>SPD</i><br><i>MCCB <small>1.5kVdc</small></i>
+                                    </td>
+                                    <td><small id="ProtectionRequired">40K</small> <i><small id="MSC">MSC</small></i>
+                                        <br><small><i id="Light">20k</i><i> <small id="NSC">NSC</small></i><br><i
+                                                id="strike">≤2.2K</i> <i><small id="VPL">VPL</small></i></small>
+                                    </td>
+                                    <td><span id="protectionDeviceInc">✔</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Installation &amp; Testing</td>
+                                    <td>Lump</td>
+                                    <td>-</td>
+                                    <td><strong>✔</strong><b id="labour"></b></td>
+                                </tr>
+                            </tbody>
+                        </table>
+    
+                        <div class="termsContainer">
+                            <h4 style="margin:0 0 8px 0">Terms &amp; Conditions</h4>
+                            <ul>
+                                <li>Payment terms: 70% upfront, 30% on completion.</li>
+                                <li>Delivery timeframe: Max 2 working days after deposit.</li>
+                                <!-- <li>Cable sizes & Mounting Structure will be determined during site assessment.</li> -->
+                                <!-- <li>Quotation valid for 30 days from the date of issue.</li>
+                                 ??:.kihytr   gf  -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="rightSide">
+                    <div class="title">PROFESSIONAL<br>QUOTATION</div>
+                    <div class="client">
+                        <small>Date: <span id="date"></span> &nbsp; • &nbsp; Quote Ref: <span
+                                id="quotationRef"></span></small>
+                    </div>
+    
+                    <div class="diagramContainer" aria-hidden="true">
+                        <!-- simple single line diagram -->
+                        <svg viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>
+                                    .s {
+                                        fill: none;
+                                        stroke: #0b4a7b;
+                                        stroke-width: 2;
+                                        stroke-linecap: round
+                                    }
+                                </style>
+    
+                            </defs>
+                            <g transform="translate(8,8)">
+                                <rect x="0" y="8" width="40" height="20" rx="2" fill="rgb(0, 110, 255)" stroke="#000000" />
+                                <rect x="0" y="40" width="40" height="20" rx="2" fill="rgb(0, 110, 255)" stroke="#000000" />
+                                <rect x="0" y="72" width="40" height="20" rx="2" fill="rgb(0, 110, 255)" stroke="#000000" />
+                                <text x="56" y="22" font-size="14" fill="#010a1d">Solar Panels</text>
+                                <text x="56" y="54" font-size="14" fill="#010a1d">Solar Panels</text>
+                                <text x="56" y="86" font-size="14" fill="#010a1d">Solar Panels</text>
+    
+                                <rect x="210" y="15" width="70" height="70" rx="6" fill="#0b4a7b" stroke="#000000" />
+                                <text x="245" y="56" font-size="16" fill="red" text-anchor="middle">Inverter</text>
+                                <line x1="40" y1="18" x2="210" y2="18" stroke="red" stroke-width="2" />
+                                <line x1="40" y1="50" x2="210" y2="50" stroke="red" stroke-width="2" />
+                                <line x1="40" y1="82" x2="210" y2="82" stroke="red" stroke-width="2" />
+    
+                                <rect x="210" y="92" width="70" height="28" rx="4" fill="#fff" stroke="red" />
+                                <text x="245" y="112" font-size="16" fill="#000000" text-anchor="middle">Battery</text>
+    
+                                <line x1="245" y1="86" x2="245" y2="92" stroke="red" stroke-width="2" />
+                            </g>
+                        </svg>
+                    </div>
+    
+                    <div class="estimatesContainer">
+                        <h4>PERFORMANCE ESTIMATES</h4>
+                        <ul>
+                            <b style="font-size: 20px; color: #0b4a7b;">System Analysis</b>
+                            <li>Daily Energy Generation: <b id="generatedEnergy">460</b><b>KW/D</b></li>
+                            <li>Backup Time at <span id="selectedValue%">50%</span> Load: <b id="backupTime">3</b><b>Hrs</b>
+                            </li>
+                            <!-- <li>Annual Bill Savings: <strong>&#8358;</strong><b id="billSaving"></b></li> -->
+                            <li>CO₂ Emissions Saved Per Year: ~<b id="co2Savings">2.324 t CO₂</b>/year </li>
+                        </ul>
+                    </div>
+    
+                    <div class="warrantyContainer">
+                        <h4 style="margin-top:0">WARRANTY &amp; SUPPORT</h4>
+                        <ul>
+                            <li>Panels: 25-year performance warranty</li>
+                            <li>Inverter: 5-year manufacturer warranty</li>
+                            <li>Batteries: 10-year expected lifespan (warranty varies)</li>
+                            <li>A.E RENEWABLE LTD: 1-year complimentary maintenance</li>
+                        </ul>
+                    </div>
+    
+                    <div class="quotationPriceCont">
+                        <h2>Total Investment</h2>
+                        <div class="quotationPriceValue">
+                            <h2 class="quotationPrice" id="quotationPrice">₦150,000,000</h2>
+                            <p class="quotationSystemSpec"><span id="systemCapacity">250kwPower /</span> <span
+                                    id="batteryCapacity">300KwhrBank</span></p>
+                            <div class="warrantyB">
+                                <span class="years">5</span>
+                                <span class="warranty">YEARS<br>WARRANTY</span>
+                                <div class="image">
+                                    <img src="https://img.icons8.com/ios-filled/50/000000/warranty.png" alt="warranty.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                </div>
+    
+    
+    
+            </div>
+            <section class="footer">
+                <p>&copy; 2024 A.E RENEWABLE LTD. All rights reserved.</p>
+                <p>Contact: <a href="mailto:info@aerenewable.com"><br>info@aerenewable.com</a></p>
+                <p>Phone: <a href="tel:+2348133615132"><br>+234 813 361 5132</a></p>
+                <p>Website: <a href="https://aerenewable.com"><br>www.aerenewable.com</a></p>
+                <button onclick="print()">Print</button>
+    
+            </section>
+        </div>
+</body>
+</html>
