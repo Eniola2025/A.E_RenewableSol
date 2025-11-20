@@ -1,42 +1,194 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Animations for Login Page */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
   }
-  to {
-    transform: rotate(360deg);
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
   }
 }
 
-.card {
-  padding: 2em;
+.animate-blob {
+  animation: blob 7s infinite;
 }
 
-.read-the-docs {
-  color: #888;
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Light Theme */
+body.light .App-header {
+  background-color: #f0f2f5;
+  border-color: #dcdcdc;
+}
+
+body.light h1 {
+  color: #282c34;
+}
+
+body.light button {
+  background-color: #fff;
+  color: #282c34;
+  border: 1px solid #dcdcdc;
+}
+
+body.light button:hover {
+  background-color: #f8f8f8;
+}
+
+/* Dark Theme */
+body.dark .App-header {
+  background-color: #1c1c1e;
+  border-color: #38383a;
+}
+
+body.dark h1 {
+  color: #ffffff;
+}
+
+body.dark button {
+  background-color: #38383a;
+  color: #ffffff;
+  border: 1px solid #545456;
+}
+
+body.dark button:hover {
+  background-color: #545456;
+}
+
+main {
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Light Theme Form */
+body.light form {
+  background-color: #f9f9f9;
+  border: 1px solid #dcdcdc;
+}
+
+body.light label {
+  color: #333;
+}
+
+body.light input {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+/* Dark Theme Form */
+body.dark form {
+  background-color: #2a2a2c;
+  border: 1px solid #38383a;
+}
+
+body.dark label {
+  color: #f5f5f7;
+}
+
+body.dark input {
+  background-color: #38383a;
+  border: 1px solid #545456;
+  color: #f5f5f7;
+}
+
+
+input {
+  padding: 10px;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Light Theme Submit Button */
+body.light button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+body.light button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Dark Theme Submit Button */
+body.dark button[type="submit"] {
+  background-color: #0a84ff;
+  color: white;
+  border: none;
+}
+
+body.dark button[type="submit"]:hover {
+  background-color: #0060c0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+body.light nav a {
+  color: #007bff;
+}
+
+body.light nav a:hover {
+  color: #0056b3;
+}
+
+body.dark nav a {
+  color: #0a84ff;
+}
+
+body.dark nav a:hover {
+  color: #0060c0;
 }
