@@ -14,7 +14,7 @@ export default defineConfig({
     open: true,
     proxy: {
       '/api': {
-        target: 'http://localhost/oluokun_cbt',
+        // target: 'http://localhost/oluokun_cbt',
         changeOrigin: true,
         secure: false,
       }
